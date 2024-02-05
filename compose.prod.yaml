@@ -1,0 +1,14 @@
+services:
+  web:
+    image: template/v1/prod
+    container_name: template_v1_prod
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
+networks:
+  default:
+    name: template_v1_prod
